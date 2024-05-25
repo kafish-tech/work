@@ -1,0 +1,557 @@
+/* css reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 主設定 */
+body{
+    font-family: Noto Sans;
+    line-height: 1.5;
+    color:#3B3B3B;
+  }
+  *, ::before, ::after{
+  /*   outline:1px solid blue; */
+    margin: auto;
+    box-sizing: border-box;
+  }
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+  a{
+    color:black;
+    text-decoration: none;
+  }
+  
+  /* header設定 */
+  .bg1{
+    max-width: 1296px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 28px 0;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  .header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+   
+  ul.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:48px
+  }
+  
+  .logo{
+    width: 90px;
+  }
+  
+  #menu-toggle {
+    display: none;
+  }
+  
+  .menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 4px;
+  }
+  .nav {
+    display: flex;
+  }
+  .menu-icon span {
+    width: 32px;
+    height: 4px;
+    background: #333;
+    margin: 4px 0;
+    transition: all 0.3s;
+  }
+  
+  ul.menu {
+    display: flex;
+    gap:48px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li.menu {
+    position: relative;
+  }
+  
+  /* Title 瞄準框的偽元素 */
+    li.menu::before,
+    li.menu::after,
+    li.menu span::before,
+    li.menu span::after {
+      content: '';
+      position: absolute; 
+      width: 8px;
+      height: 8px;
+      border: 1px solid #919191;
+      opacity: 0; /* 初始狀態不出現 */
+      transition: opacity 0.3s; /* Smooth transition */
+    }
+  
+   li.menu::before {
+      top: -4px;
+      left: -8px;
+      border-right: none;
+      border-bottom: none;
+    }
+  
+    li.menu::after {
+      bottom: -4px;
+      right: -8px;
+      border-left: none;
+      border-top: none;
+    }
+  
+    li.menu span::before {
+      top: -4px;
+      right: -8px;
+      border-left: none;
+      border-bottom: none;
+    }
+  
+    li.menu span::after {
+      bottom: -4px;
+      left: -8px;
+      border-right: none;
+      border-top: none;
+    }
+  
+    li.menu:hover::before,
+    li.menu:hover::after,
+    li.menu:hover span::before,
+    li.menu:hover span::after {
+      opacity: 50%; /* Visible on hover */
+    }
+  div.block{
+    width:90px;
+  }
+  
+  /* Banner 設計 */
+  .bg2{
+    background: #FAFAFA;
+  }
+  .banner{
+    max-width: 670px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    gap: 24px;
+  }
+  
+  .welc{
+    margin: auto;
+    width:670px;
+    height: 192px;
+    display: flex;
+    position: relative;
+  }
+  .welc-img-1{
+    position: absolute; 
+    top:0px;
+    left:0px;
+  }
+  .welc-img-2{
+    position: absolute; 
+    bottom: 0px;
+    right:0px;
+  }
+  .welc-p{
+    position: absolute;
+    top:59px;
+    left:71px;
+  }
+  
+  p.main{
+    font-size: 24px;
+    margin-bottom: 16px;
+    text-align: center;
+    color: #1E1E1E;
+  }
+  span.mark{
+    position: relative;
+    z-index:1;
+  }
+  img.mark{
+    position: absolute; 
+    width: 148px;
+    bottom:0px;
+    right:-15px;
+    z-index:-1;
+  }
+  
+  ul.goal{
+    width: 636px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    gap:40px;
+  }
+  li.goal{
+    text-align: center;
+  }
+  hr{
+    border: 0; /*無立體感*/
+    height: 2px; 
+    width: 24px;
+    background-color: #C1C1C1;
+    margin-top: 4px;
+    margin-bottom: 8px;
+  }
+  p.goal1{
+    color: #5B5B5B;
+  }
+  
+  /* container 設定 */
+  
+  .container{
+    max-width: 1296px;
+    width: 100%;
+    margin: 0 auto;  
+    margin-top: 120px;
+    margin-bottom: 120px;
+  }
+  .work{
+    display: flex;
+    flex-wrap: wrap;    
+    gap: 80px 24px;
+    margin-bottom: 72px;
+  }
+  .item{
+    margin: 0 auto;
+    max-width: 50%;
+  }
+  .pic{
+    display: block;
+    width: 636px;
+    border:1px solid #F1F1F1;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  .item-title{
+    font-size: 28px;
+    font-weight: 700;    
+    margin-bottom: 8px;
+    color: #3B3B3B;
+    padding-left: 16px;
+  }
+  .dis{
+    color: #919191;
+    padding-left: 16px;
+  }
+  .keyword{
+    display: flex;
+    align-items: center;    
+    margin-top:24px;
+    padding-left: 16px;
+  }
+  
+  .keyword li{
+    margin-right: 16px;
+  }
+  .keyword li a{
+    display: block;
+    padding: 4px 12px 4px 12px;
+    border-radius: 16px;
+    color: #3B3B3B;  
+    background-color: #F1F1F1;
+  }
+  .pagination{
+    display: flex;
+    justify-content: center;
+    gap:16px;
+  }
+  .pagination a{
+    border-radius: 4px;
+    display: block;
+    padding: 2px 13px 2px 13px;
+    font-size: 24px;
+    color: #3B3B3B; 
+  }
+  .pagination a:hover{
+    background: #3B3B3B;
+    color:white;
+  }
+  
+  /* footer 設定 */
+  .bg4{
+    background-image: url(https://hex2024.worksbyaaron.com/image/footer/footer-bg-lg.webp);
+    background-size: cover;
+    width: full-screen;
+    padding: 80px 0px;
+  }
+  .footer{
+    max-width:1296px;
+    width:100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  div.end{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:24px;
+  }
+  img.logo-end{
+    width: 101px;
+  }
+  .intro{
+    font-size: 20px;
+  }
+  .dial a{
+    font-size: 20px;
+    color: #919191;
+  }
+  
+  ul.end{
+    width: 306px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  li.end{
+    border-radius: 8px;
+    border: 1px solid #C1C1C1;
+    color: whigt;
+    gap: 8px;
+    padding: 8px 24px;
+    display: block;
+    display: flex;
+    align-items: center;
+  }
+  li.end1{
+    border-radius: 8px;
+    background: black;
+    gap: 8px;
+    padding: 8px 24px;
+    display: flex;
+    align-items: center;
+  }
+  img.end{
+    height: 56px;
+  }
+  p.end{
+    font-size: 20px;
+  }
+  p.end1{
+    font-size: 20px;
+    color:white;
+  }
+  
+  /* Mobile Styles */
+  /* @media (max-width: 992px) {
+    
+  } */
+  @media (max-width: 767px) {
+  /*  header 區域  */
+    .block{
+      display: none;
+    }
+    .bg1{
+      padding: 11px 0;
+    }
+    .logo{
+      width: 74px;
+    }
+    .nav {
+      max-width: 767px;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      position: absolute;
+      top:100px;
+      left: 0;
+      background: white;
+    }
+  
+    #menu-toggle:checked +.menu-icon + .nav {
+      display: flex;
+    }
+  
+    .menu-icon {
+      display: flex;
+    }
+  
+    ul.menu {
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .menu li{
+      width: 100%;
+      text-align: center;
+    }
+    .menu p {
+      width: 100%;
+      text-align: center;
+      position: relative;
+    }
+    .menu a{
+      padding: 4px 8px;
+      margin: 0 10px 0 10px;
+    }
+    li.menu a:hover{
+      font-weight: 600;
+      background: 
+      linear-gradient(#919191,#919191) top right,
+      linear-gradient(#919191,#919191) top right,
+      linear-gradient(#919191,#919191) bottom left,
+      linear-gradient(#919191,#919191) bottom left,
+      linear-gradient(#919191,#919191) bottom right,
+      linear-gradient(#919191,#919191) bottom right,
+      linear-gradient(#919191,#919191) top left, 
+      linear-gradient(#919191,#919191) top left;
+      background-size: 8px 1px, 1px 8px;
+      background-repeat: no-repeat;
+    }
+  /*  banner  */
+    .banner{
+      padding-top: 40px;
+      gap: 32px;
+    }
+  
+    .welc{
+      width:300px;
+    }
+    .welc-img-1{
+      position: absolute; 
+      left:118px;
+      width:64px;
+    }
+    .welc-img-2{
+      display: none;
+    }
+    .welc-p{
+      top:64px;
+      left:0px;
+    }
+    p.main{
+      width: 300px;
+      display: flex;
+      flex-wrap:wrap;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    img.mark{
+      width: 108px;
+      bottom:3px;
+      right:-10px;
+    }
+    ul.goal{
+      width: 235px;
+      display: flex;
+      flex-wrap: wrap;
+      gap:20px;
+    }
+  
+    /* container 設定 */
+    .container{
+      max-width: 351px;
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+    .work{
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .item{
+      max-width: 100%;
+    }
+    .pic{
+      border:0px ;
+    }
+    .item-title{
+      font-size: 20px;
+    }
+    .keyword{
+      margin-top:16px;
+    }
+  
+    .keyword li{
+      margin-right: 8px;
+    }
+  
+  
+  /*  footer  */
+    .bg4{
+      padding: 40px 0px;
+      background-position: center center;
+    }
+    .footer{
+      max-width:351px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap:40px;
+    }
+    div.end{
+      align-items: center;
+      gap:24px;
+    }
+    .intro{
+      font-size: 16px;
+    }
+    .dial a{
+      font-size: 16px;
+    }
+     
+    
+  }
+  
